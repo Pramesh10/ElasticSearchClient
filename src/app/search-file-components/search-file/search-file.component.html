@@ -1,1 +1,52 @@
-<p>search-copoasdkj</p>
+<div class="container search-field">
+  <div class="row">
+    <div class="card-whole">
+      <form [formGroup]="searchForm">
+        <div class="input-group mb-3">
+          <input
+            type="text"
+            formControlName="searchInput"
+            class="form-control"
+            placeholder="Search file"
+            aria-describedby="button-addon2"
+          />
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+          >
+            Search
+          </button>
+        </div>
+      </form>
+
+      <div class="card" *ngIf="filesList">
+        <div class="card card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">FileName</th>
+                  <th scope="col">File Type</th>
+                  <th scope="col">Created Date</th>
+                  <th scope="col">Created By</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let fileList of filesList">
+                  <td>{{ fileList.FileName }}</td>
+                  <td>{{ fileList.FileExtension }}</td>
+                  <td>{{ fileList.CreatedDate | date:'y-M-d' }}</td>
+                  <td>{{ fileList.CreatedBy }}</td>
+                  <td><button class="btn btn-primary"  (click)="downloadFile(fileList.Id, fileList.MimeType)">Download</button></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

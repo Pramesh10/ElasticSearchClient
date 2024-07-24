@@ -132,7 +132,9 @@ export class UploadFileComponent {
         console.log(data);
         console.log(data);
         if (data.body) {
-        this.uploadMessage = "File Uploaded Successfully";
+          this.uploadMessage = 'File Uploaded Successfully';
+          this.files = [];
+          this.fileForm = null;
         }
       },
       (error) => {
