@@ -1,13 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpEventType } from '@angular/common/http';
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 import {
   FormBuilder,
   FormControl,

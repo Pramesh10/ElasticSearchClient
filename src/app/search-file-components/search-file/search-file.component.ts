@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ElasticSearchService } from '../../services/elastic-search.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { saveAs } from 'file-saver';
 @Component({
   selector: 'app-search-file',
@@ -21,8 +21,7 @@ export class SearchFileComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private searchService: ElasticSearchService,
-    private http: HttpClient,
-    private sanitizer: DomSanitizer
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {

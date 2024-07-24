@@ -37,10 +37,16 @@
                 <tr *ngFor="let fileList of filesList">
                   <td>{{ fileList.FileName }}</td>
                   <td>{{ fileList.FileExtension }}</td>
-                  <td>{{ fileList.CreatedDate | date:'y-M-d' }}</td>
+                  <td>{{ fileList.CreatedDate | date : "y-M-d" }}</td>
                   <td>{{ fileList.CreatedBy }}</td>
-                  <td><button class="btn btn-primary"  (click)="downloadFile(fileList.Id, fileList.MimeType)">Download</button></td>
-
+                  <td>
+                    <button
+                      class="btn btn-primary"
+                      (click)="downloadFile(fileList.Id, fileList.MimeType)"
+                    >
+                      Download
+                    </button>
+                  </td>
                 </tr>
               </tbody>
             </table>
